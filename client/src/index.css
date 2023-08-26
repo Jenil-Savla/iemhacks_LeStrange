@@ -1,13 +1,60 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+button.btn-primary {
+  @apply text-white bg-primary hover:bg-secondary font-medium rounded-lg text-sm px-4 py-2 shadow-main-sd;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.parallax {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parallax::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to top, #ffffff, transparent);
+  z-index: 10;
+}
+
+.parallax img {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.parallax #text {
+  position: absolute;
+  color: #094b65;
+  font-size: 8vw;
+  text-align: center;
+  line-height: 0.55em;
+  font-family: "Rancho", cursive;
+  transform: translatey(-220%);
+  margin-left: -18%;
+}
+
+.parallax #text span {
+  font-size: 0.2em;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.sec {
+  position: relative;
 }
