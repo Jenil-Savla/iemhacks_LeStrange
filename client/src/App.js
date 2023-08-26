@@ -15,6 +15,7 @@ import Scheme from "./Pages/Schemes/Scheme";
 import UseAlan from "./components/UseAlan";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Forum from "./Pages/Forum/Forum";
+import Tutorials from "./Pages/Tutorials/Tutorials";
 
 function App() {
   const { user } = useContext(Context);
@@ -32,6 +33,7 @@ function App() {
         <Route path="/inventory" element={<Inventory /> } />
         <Route path="/cart" element={user ? <Cart /> : <Login />} />
         <Route path="/schemes" element={<Scheme />} />
+        <Route path="/tutorials" element={<Tutorials />} />
         <Route
           path="/products/:name"
           element={user ? <Products /> : <Login />}
