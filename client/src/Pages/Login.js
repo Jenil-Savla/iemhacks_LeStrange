@@ -69,7 +69,7 @@ const Login = ({}) => {
         </div>
         <div className="z-10">
           {/* <div className="flex flex-col w-full justify-center items-center"> */}
-          <div className="lg:w-[26vw] bg-white h-[60vh] my-auto rounded-3xl shadow-primary-sd text-left overflow-y-hidden">
+          <div className="lg:w-[26vw] bg-white h-[70vh] my-auto rounded-3xl shadow-primary-sd text-left overflow-y-hidden">
             <div className="p-14 flex flex-col justify-center items-start">
               <p className="font-ourfont font-bold text-3xl overflow-y-hidden text-primary-black">
                 Log In
@@ -86,16 +86,16 @@ const Login = ({}) => {
               <br />
               <form className="w-full max-w-sm mt-5">
                 <p className="font-medium">
-                  {role === "farmer" ? "ID Number" : "Email"}
+                  {"Email"}
                 </p>
                 <div className="flex items-center border-b-2 border-ourmedpurp ">
                   <input
                     className="appearance-none bg-transparent border-none w-[77%] text-subtext mr-3 py-1 leading-tight focus:outline-none"
                     type="text"
                     placeholder={
-                      role === "farmer"
-                        ? "Enter your ID number"
-                        : "Enter your email"
+                      // role === "farmer"
+                        // ? "Enter your ID number"
+                        "Enter your email"
                     }
                     name="email"
                     value={email}
@@ -103,27 +103,27 @@ const Login = ({}) => {
                       setEmail(e.target.value);
                     }}
                   />
-                  {role === "farmer" && (
+                  {/* {role === "farmer" && (
                     <button onClick={sendOtp}>Send OTP</button>
-                  )}
+                  )} */}
                 </div>
                 {/* <div className="text-[12px] text-red-600">{used}</div> */}
                 <p className="font-medium mt-5">
-                  {role === "farmer" ? "OTP" : "Password"}
+                  {"Password"}
                 </p>
                 <div className="flex items-center border-b-2 border-ourmedpurp ">
                   <input
                     onChange={(e) => {
                       setPassword(e.target.value);
                     }}
-                    disabled={role === "farmer" ? !otp : false}
+                    // disabled={role === "farmer" ? !otp : false}
                     value={password}
                     className="appearance-none bg-transparent border-none w-full text-subtext mr-3 py-1 leading-tight focus:outline-none"
                     type="password"
                     placeholder={
-                      role === "farmer"
-                        ? "Enter 4 digit OTP"
-                        : "Enter your password"
+                      // role === "farmer"
+                      //   ? "Enter 4 digit OTP"
+                        "Enter your password"
                     }
                     name="password"
                   />
