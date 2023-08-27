@@ -1,11 +1,14 @@
 const mongoose = require("mongoose");
+const dotenv = require('dotenv');
 
 mongoose.set("strictQuery", true);
 
+dotenv.config();
+
 mongoose
   .connect(
-    "mongodb+srv://khushidjobanputra77:Khushi77@cluster0.jgmn7d4.mongodb.net/?retryWrites=true&w=majority"
-  )
+      process.env.MONGODB_URL  
+    )
   .then(() => {
     console.log("Connected to Mongo!");
   });
