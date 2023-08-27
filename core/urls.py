@@ -21,7 +21,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include("croppred.urls"))
+    path('', include("croppred.urls")),
+    path('post/', include("redditclone.urls"))
 ]
 
 if settings.DEBUG:
