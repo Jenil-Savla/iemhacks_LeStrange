@@ -38,7 +38,18 @@ def modelwwwwww():
     model.fit(X_train, y_train)
     return model
 
-# Create your views here.
+#This function is used to train the ARIMA model and save it
+def forecast_arima(column):
+    data = pd.read_csv('climate_data.csv')
+    data['Date'] = pd.to_datetime(data['Date'])
+    data.set_index('Date', inplace=True)
+    monthly_data = data.resample('M').mean()
+    model = ARIMA(data[column], order=(5, 1, 1), seasonal_order=(1, 1, 1, 12))
+    model_fit = model.fit()
+    forecast = model_fit.forecast(steps=12)
+    joblib.dump(model_fit, "arina_"+column[:9].lower()+".pkl")
+    return forecast
+
 class ForcastPred(APIView):
     def post(self, request):
         arima_humid = joblib.load("arina_humid.pkl")
@@ -58,6 +69,7 @@ class ForcastPred(APIView):
             'rainfall': forecast_rainfall_mm
         }
         soil_image = request.FILES.get("soil")
+        print(soil_image)
         cwd = os.path.join('.',"soil."+soil_image.name.split('.')[-1])
         with open (cwd, "wb") as f:
             f.write(soil_image.read())
@@ -78,8 +90,10 @@ class ForcastPred(APIView):
         })
         yearly_weather_conditions = pred_df
         yearly_crops = main_model.predict(yearly_weather_conditions)
-        return Response({"list":yearly_crops, "soil":user_soil_type, "forcast":forecast_results})
+        return Response({"list":yearly_crops, "soil":user_soil_type.capitalize(), "forcast":forecast_results})
 
+
+#This function predicts the soil type from image
 def imagePred(image):
     classes = ["Alluvial Soil",
             "Black Soil",
