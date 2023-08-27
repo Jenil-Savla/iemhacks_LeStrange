@@ -15,7 +15,7 @@ const ItemCard = ({ p, idx, cart }) => {
   const handleDelete = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:8000/user/removefromcart",
+        "https://cropvista.onrender.com/user/removefromcart",
         {
           productId: p._id,
         },

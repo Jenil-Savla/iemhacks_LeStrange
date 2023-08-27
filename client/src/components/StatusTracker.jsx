@@ -24,7 +24,7 @@ export default function StatusTracker() {
             const getAllOrders = async () => {
               try {
                 const { data } = await axios.get(
-                  `http://localhost:8000/order/user`,
+                  `https://cropvista.onrender.com/order/user`,
                     config
                 );
                 setorders(data.orders);

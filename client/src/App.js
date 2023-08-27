@@ -14,7 +14,7 @@ import Scheme from "./Pages/Schemes/Scheme";
 
 import UseAlan from "./components/UseAlan";
 import Dashboard from "./Pages/Dashboard/Dashboard";
-import Forum from "./Pages/Forum/Forum";
+// import Forum from "./Pages/Forum/Forum";
 import Tutorials from "./Pages/Tutorials/Tutorials";
 import CropPlanner from "./components/CropPlanner";
 
@@ -26,8 +26,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/forum" element={<Forum />} />
+        {/* <Route path="/forum" element={<Forum />} /> */}
         {/* <Route path="/home" element={user ? <Home /> : <Login />} /> */}
         <Route path="/addProduct" element={<AddProduct />} />
         <Route path="/shop" element={<Products />} />

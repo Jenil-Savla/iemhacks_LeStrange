@@ -17,8 +17,8 @@ function Products() {
     const getAllProduct = async () => {
       try {
         const { data } = await axios.get(
-          //`http://localhost:8000/product/get/cropType/name?cropType=${name}`
-          `http://localhost:8000/product/getAll`
+          //`https://cropvista.onrender.com/product/get/cropType/name?cropType=${name}`
+          `https://cropvista.onrender.com/product/getAll`
           //     config
         );
         setProduct(data.data);
@@ -36,7 +36,7 @@ function Products() {
     const getAllProduct = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:8000/product/filter?price=${price}&cropType&cropSubType=${subType}&quantity=${quantity}`
+          `https://cropvista.onrender.com/product/filter?price=${price}&cropType&cropSubType=${subType}&quantity=${quantity}`
           //     config
         );
         setProduct(data.data);
@@ -54,8 +54,8 @@ function Products() {
     const getAllProduct = async () => {
       try {
         const { data } = await axios.get(
-          //`http://localhost:8000/product/get/cropType/name?cropType=${name}`
-          `http://localhost:8000/product/getAll`
+          //`https://cropvista.onrender.com/product/get/cropType/name?cropType=${name}`
+          `https://cropvista.onrender.com/product/getAll`
           //     config
         );
         setProduct(data.data);

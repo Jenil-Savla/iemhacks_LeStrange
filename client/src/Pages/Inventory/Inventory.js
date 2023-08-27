@@ -11,7 +11,7 @@ function Inventory() {
     const getAllProduct = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:8000/product/getOne`,
+          `https://cropvista.onrender.com/product/getOne`,
           config
         );
         setProduct(data.data);

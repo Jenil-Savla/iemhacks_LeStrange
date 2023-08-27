@@ -17,7 +17,7 @@ function SingleProduct() {
     const getAllProduct = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:8000/product/get/${id}`
+          `https://cropvista.onrender.com/product/get/${id}`
         );
         setProduct(data.data);
         setRatings(data?.data?.userRatings);
@@ -35,7 +35,7 @@ function SingleProduct() {
     const quantity = document.getElementById("quantity").value;
     try {
       const { data } = await axios.post(
-        `http://localhost:8000/user/addtocart`,
+        `https://cropvista.onrender.com/user/addtocart`,
         {
           productId: id,
           quantity: quantity,

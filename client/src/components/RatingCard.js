@@ -16,7 +16,7 @@ function RatingCard({ id }) {
     const getRating = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:8000/rating/get/${id}`
+          `https://cropvista.onrender.com/rating/get/${id}`
           //     config
         );
         setRating(data.data);
@@ -39,7 +39,7 @@ function RatingCard({ id }) {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        `http://localhost:8000/rating/update/${id}`,
+        `https://cropvista.onrender.com/rating/update/${id}`,
         { stars, text },
         config
       );

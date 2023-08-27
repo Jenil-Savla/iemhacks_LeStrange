@@ -42,7 +42,7 @@ export default function UseAlan() {
           }
           if (command === COMMANDS.OPEN_HOME) {
             console.log(command)
-            navigateToPage("home");
+            navigateToPage("/");
           }
           if (command === COMMANDS.ADD_PRODUCT) {
             navigateToPage("addProduct");
@@ -55,7 +55,7 @@ export default function UseAlan() {
           }
           if (command === COMMANDS.LOG_OUT) {
             openCart();
-            navigateToPage("home");
+            navigateToPage("login");
           }
           if (command === COMMANDS.OPEN_ORDER) {
             navigateToPage("status");

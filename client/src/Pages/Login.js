@@ -11,7 +11,7 @@ const Login = ({}) => {
 
   const [otp, setOtp] = useState(false);
 
-  const url = "http://localhost:8000/";
+  const url = "https://cropvista.onrender.com";
 
   const loginUser = async (e) => {
     e.preventDefault();

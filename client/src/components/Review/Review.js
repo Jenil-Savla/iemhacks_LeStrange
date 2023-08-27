@@ -21,7 +21,7 @@ const Review = ({ id }) => {
     const getRating = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:8000/rating/get/${id}`
+          `https://cropvista.onrender.com/rating/get/${id}`
           //     config
         );
         setRate(data.data);
@@ -102,7 +102,7 @@ const Review = ({ id }) => {
       : 0;
     try {
       const { data } = await axios.post(
-        `http://localhost:8000/rating/create/${id}`,
+        `https://cropvista.onrender.com/rating/create/${id}`,
         { stars, text: inputData },
         config
       );

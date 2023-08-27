@@ -13,7 +13,7 @@ const RecentOrders = ({ orders }) => {
   useEffect(() => {
     let user = [];
     orders.map(async (order) => {
-      const res = await axios.get(`http://localhost:8000/user/${order.userId}`);
+      const res = await axios.get(`https://cropvista.onrender.com/user/${order.userId}`);
       user.push(res.data.user);
     });
     console.log(user);

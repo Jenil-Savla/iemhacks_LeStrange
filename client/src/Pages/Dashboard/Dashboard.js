@@ -18,21 +18,21 @@ const Dashboard = () => {
   useEffect(() => {
     const getDailyOrders = async () => {
       const response = await axios.get(
-        "http://localhost:8000/order/today",
+        "https://cropvista.onrender.com/order/today",
         config
       );
       setOrdersDaily(response.data.orders);
     };
     const getWeeklyOrders = async () => {
       const response = await axios.get(
-        "http://localhost:8000/order/week",
+        "https://cropvista.onrender.com/order/week",
         config
       );
       setOrdersWeekly(response.data.orders);
     };
     const allOrders = async () => {
       const response = await axios.get(
-        "http://localhost:8000/order/overall",
+        "https://cropvista.onrender.com/order/overall",
         config
       );
       setOrders(response.data.orders);

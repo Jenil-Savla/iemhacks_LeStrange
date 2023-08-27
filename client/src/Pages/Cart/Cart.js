@@ -20,7 +20,7 @@ const Cart = () => {
 
   useEffect(() => {
     const fetchCart = async () => {
-      const res = await axios.get(`http://localhost:8000/user/cart`, config);
+      const res = await axios.get(`https://cropvista.onrender.com/user/cart`, config);
       console.log(res.data.cart);
       setCart(res.data.cart);
     };
@@ -36,7 +36,7 @@ const Cart = () => {
       navigator.geolocation.getCurrentPosition(
         async (position) => {
           const res = await axios.post(
-            `http://localhost:8000/order/create`,
+            `https://cropvista.onrender.com/order/create`,
             {
               products: cart,
               price: price,
@@ -49,7 +49,7 @@ const Cart = () => {
             config
           );
           console.log(res.data);
-          await axios.post(`http://localhost:8000/user/clearcart`, {}, config);
+          await axios.post(`https://cropvista.onrender.com/user/clearcart`, {}, config);
           navigate("/");
         },
         () => null,
@@ -64,7 +64,7 @@ const Cart = () => {
     const fetchProducts = async () => {
       cart.forEach(async (item) => {
         const res = await axios.get(
-          `http://localhost:8000/product/get/${item.productId}`
+          `https://cropvista.onrender.com/product/get/${item.productId}`
         );
         setProducts((prev) => [...prev, res.data.data]);
       });

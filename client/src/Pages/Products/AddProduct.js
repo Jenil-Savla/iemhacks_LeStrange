@@ -61,7 +61,7 @@ function AddProduct() {
     try {
       setLoading(true);
       const { data } = await axios.post(
-        "http://localhost:8000/product/upload",
+        "https://cropvista.onrender.com/product/upload",
         { data: base64EncodedImage },
         config
       );
@@ -91,7 +91,7 @@ function AddProduct() {
   
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/product/create",
+        "https://cropvista.onrender.com/product/create",
         {
           name,
           quantity,

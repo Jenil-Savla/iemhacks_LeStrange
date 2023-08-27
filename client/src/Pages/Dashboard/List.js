@@ -8,7 +8,7 @@ const List = ({ order, placed }) => {
   useEffect(() => {
     const getUser = async () => {
       const response = await axios.get(
-        `http://localhost:8000/user/${order.userId}`
+        `https://cropvista.onrender.com/user/${order.userId}`
       );
       setUser(response.data.user);
     };

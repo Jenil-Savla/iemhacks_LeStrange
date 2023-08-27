@@ -90,7 +90,7 @@ function Navbar() {
                 </Link>
               </li>
             )}
-            {role !== "user" && (
+            {/* {role !== "user" && (
               <li>
                 <Link
                   to="/inventory"
@@ -99,7 +99,7 @@ function Navbar() {
                   Community
                 </Link>
               </li>
-            )}
+            )} */}
             <li>
               <div
                 onClick={() => {
