@@ -16,6 +16,7 @@ import UseAlan from "./components/UseAlan";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Forum from "./Pages/Forum/Forum";
 import Tutorials from "./Pages/Tutorials/Tutorials";
+import CropPlanner from "./components/CropPlanner";
 
 function App() {
   const { user } = useContext(Context);
@@ -34,6 +35,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/schemes" element={<Scheme />} />
         <Route path="/tutorials" element={<Tutorials />} />
+        <Route path="/cropplanner" element={<CropPlanner />} />
         <Route
           path="/products/:name"
           element={user ? <Products /> : <Login />}
