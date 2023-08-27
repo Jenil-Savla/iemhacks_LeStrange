@@ -22,13 +22,7 @@ const Login = ({}) => {
           email,
           password,
         });
-      } else if (role === "farmer") {
-        res = await axios.post(url + role + `/login`, {
-          id: parseInt(email),
-          otp: parseInt(password),
-        });
-      }
-      console.log(res);
+        console.log(res);
       let token = res.data.authToken;
       localStorage.setItem("token", JSON.stringify(token));
       localStorage.setItem("role", role);
@@ -36,6 +30,26 @@ const Login = ({}) => {
       console.log(res?.data?.user);
       setUser(res?.data?.user);
       navigate("/");
+      } else if (role === "farmer") {
+        // res = await axios.post(url + role + `/login`, {
+        //   id: parseInt(email),
+        //   otp: parseInt(password),
+        // });
+        if(email === "farmer@test.com" && password === "farmer") {
+          navigate('/');
+        }
+        else {
+          alert('Invalid credentials')
+        }
+      }
+      // console.log(res);
+      // let token = res.data.authToken;
+      // localStorage.setItem("token", JSON.stringify(token));
+      // localStorage.setItem("role", role);
+      // localStorage.setItem("userType", JSON.stringify(res?.data?.user));
+      // console.log(res?.data?.user);
+      // setUser(res?.data?.user);
+      // navigate("/");
     } catch (err) {
       setEmail("");
       setPassword("");
@@ -69,20 +83,20 @@ const Login = ({}) => {
         </div>
         <div className="z-10">
           {/* <div className="flex flex-col w-full justify-center items-center"> */}
-          <div className="lg:w-[26vw] bg-white h-[70vh] my-auto rounded-3xl shadow-primary-sd text-left overflow-y-hidden">
+          <div className="lg:w-[26vw] bg-white h-[75vh] my-auto rounded-3xl shadow-primary-sd text-left overflow-y-hidden">
             <div className="p-14 flex flex-col justify-center items-start">
               <p className="font-ourfont font-bold text-3xl overflow-y-hidden text-primary-black">
                 Log In
               </p>
-              <p className="mt-3 font-ourfont font-normal text-sm text-subtext">
+              {/* <p className="mt-3 font-ourfont font-normal text-sm text-subtext">
                 New to our site?
-              </p>
-              <span className="font-ourfont font-normal text-sm text-subtext">
-                You can {/* {isReg ?  */}
+              </p> */}
+              {/* <span className="font-ourfont font-normal text-sm text-subtext">
+                You can 
                 <button className="font-ourfont font-semibold text-sm text-ourmedpurp">
                   Register Here!
                 </button>
-              </span>
+              </span> */}
               <br />
               <form className="w-full max-w-sm mt-5">
                 <p className="font-medium">
@@ -163,6 +177,12 @@ const Login = ({}) => {
                   </button>
                 </div>
               </form>
+              <p>Credentials for User:</p>
+              <p>email: test12@test.com</p>
+              <p>password: test@123</p>
+              <p>Credentials for Farmer:</p>
+              <p>email: farmer@test.com</p>
+              <p>password: farmer</p>
             </div>
           </div>
           {/* </div> */}

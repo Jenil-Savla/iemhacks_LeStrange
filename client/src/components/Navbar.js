@@ -1,25 +1,26 @@
 // React Imports
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Context } from "../Context/ContextProvider";
 
 function Navbar() {
   const { setUser, role } = useContext(Context);
+  const navigate = useNavigate();
   return (
     <nav className="bg-white font-ourfont border-gray-200 sticky h-[12vh] border-b-2 border">
       <div className="max-w-screen-xl h-full flex flex-wrap items-center justify-between mx-auto p-4">
         <img src="/Images/logo.jpeg" className="h-12 mr-3" alt="Flowbite Logo" />
         <div className="hidden w-full md:block md:w-auto" id="navbar-dropdown">
           <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white">
-            <li>
-              <Link
-                to="/"
-                className="block py-2 pl-3 pr-4 hover:underline text-white bg-secondary rounded md:bg-transparent md:text-secondary md:p-0 "
-              >
-                Home
-              </Link>
-            </li>
+              <li>
+                <Link
+                  to="/"
+                  className="block py-2 pl-3 pr-4 hover:underline text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-secondary md:p-0"
+                >
+                  Home
+                </Link>
+              </li>
             {role === "user" && (
               <li>
                 <Link
@@ -30,11 +31,16 @@ function Navbar() {
                 </Link>
               </li>
             )}
+            {role !== "user" && (
             <li>
-              <Link className="block py-2 pl-3 pr-4 hover:underline text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-secondary md:p-0">
-                Profile
+              <Link className="block py-2 pl-3 pr-4 hover:underline text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-secondary md:p-0"
+                to='/dashboard'
+                >
+                Dashboard
               </Link>
             </li>
+            )}
+            {role === "user" && (
             <li>
               <Link
                 className="block py-2 pl-3 pr-4 hover:underline text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-secondary md:p-0"
@@ -43,6 +49,7 @@ function Navbar() {
                 My Orders
               </Link>
             </li>
+            )}
             {role !== "user" && (
               <li>
                 <Link
@@ -50,6 +57,16 @@ function Navbar() {
                   className="block py-2 pl-3 pr-4 hover:underline text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-secondary md:p-0"
                 >
                   Add Products
+                </Link>
+              </li>
+            )}
+            {role !== "user" && (
+              <li>
+                <Link
+                  to="/cropplanner"
+                  className="block py-2 pl-3 pr-4 hover:underline text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-secondary md:p-0"
+                >
+                  Crop Planner
                 </Link>
               </li>
             )}
@@ -86,6 +103,7 @@ function Navbar() {
             <li>
               <div
                 onClick={() => {
+                  navigate('/login')
                   setUser(null);
                   localStorage.removeItem("token");
                   localStorage.removeItem("userType");
