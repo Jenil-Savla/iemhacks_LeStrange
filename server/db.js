@@ -7,7 +7,8 @@ dotenv.config();
 
 mongoose
   .connect(
-      process.env.MONGODB_URL  
+      //process.env.MONGODB_URL
+      "mongodb+srv://khushidjobanputra77:Khushi77@cluster0.jgmn7d4.mongodb.net/?retryWrites=true&w=majority"
     )
   .then(() => {
     console.log("Connected to Mongo!");
