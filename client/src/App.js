@@ -24,14 +24,14 @@ function App() {
     <Router>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={user ? <Home /> : <Login />} />
-        {/* <Route path="/" element={<Home />} /> */}
+        {/* <Route path="/" element={user ? <Home /> : <Login />} /> */}
+        <Route path="/" element={<Home />} />
         <Route path="/forum" element={<Forum />} />
         {/* <Route path="/home" element={user ? <Home /> : <Login />} /> */}
-        <Route path="/addProduct" element={user ? <AddProduct /> : <Login />} />
-        <Route path="/shop" element={user ? <Products /> : <Login />} />
+        <Route path="/addProduct" element={<AddProduct />} />
+        <Route path="/shop" element={<Products />} />
         <Route path="/inventory" element={<Inventory /> } />
-        <Route path="/cart" element={user ? <Cart /> : <Login />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/schemes" element={<Scheme />} />
         <Route path="/tutorials" element={<Tutorials />} />
         <Route

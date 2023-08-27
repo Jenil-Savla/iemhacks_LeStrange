@@ -63,7 +63,7 @@ export default function StatusTracker() {
             </div>
             {orders?.map((order) => (
                 
-            <div onClick={() => {setorder(order)}} className='w-full bg-white shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300 mx-auto'>
+            <div onClick={() => {setorder(order)}} className='w-full h-[300px] bg-white shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300 mx-auto'>
                 <div className='flex justify-between'>
                     <h2 className='my-2 p-2'>Order ID: {order._id}</h2>
                     {stat_button(order.status)}

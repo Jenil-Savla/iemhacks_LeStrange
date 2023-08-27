@@ -12,9 +12,9 @@ function ProductCards({ p }) {
         navigate(`/singleProduct/${p._id}`);
       }}
     >
-      <div className="tag bg-primary px-2 py-1 rounded-lg text-sm w-max text-white">
+      {/* <div className="tag bg-primary px-2 py-1 rounded-lg text-sm w-max text-white">
         {p?.cropType}
-      </div>
+      </div> */}
       <img
         src={p?.image ? p?.image : "/Images/banana.png"}
         alt=""

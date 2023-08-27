@@ -66,10 +66,20 @@ function Navbar() {
             {role !== "user" && (
               <li>
                 <Link
+                  to="/tutorials"
+                  className="block py-2 pl-3 pr-4 hover:underline text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-secondary md:p-0"
+                >
+                  Tutorials
+                </Link>
+              </li>
+            )}
+            {role !== "user" && (
+              <li>
+                <Link
                   to="/inventory"
                   className="block py-2 pl-3 pr-4 hover:underline text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-secondary md:p-0"
                 >
-                  Inventory
+                  Community
                 </Link>
               </li>
             )}
